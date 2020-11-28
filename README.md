@@ -1,6 +1,6 @@
 # TwitterClone
 
-Twitter Clone Application
+Twitter Clone Application to study with lecture
 
 ## Lecture from Udemy
 #### https://www.udemy.com/course/twitter-ios-clone-swift/
