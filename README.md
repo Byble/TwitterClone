@@ -6,6 +6,12 @@ Twitter Clone Application to study with lecture
 #### https://www.udemy.com/course/twitter-ios-clone-swift/
 
 <br><br/>
+## Why this Project/Lecture?
+1. Studying MVVM Architecture in detail
+2. Advanced UITableView and UICollectionView skills
+3. Advanced UI/UX development to build a clean and visually appearing user interface
+
+<br><br/>
 ## Using
 1. Architecture - MVVM
 2. Image - SDWebImage
@@ -17,12 +23,6 @@ etc...
 <br><br/>
 ## ToDo - After the lecture
 1. Using RxSwift
-
-<br><br/>
-## Why this Project/Lecture?
-1. Studying MVVM Architecture in detail
-2. Advanced UITableView and UICollectionView skills
-3. Advanced UI/UX development to build a clean and visually appearing user interface
 
 <br><br/>
 ## New Knowledge
