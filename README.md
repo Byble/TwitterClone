@@ -7,10 +7,10 @@ Twitter Clone Application
 
 <br><br/>
 ## Using
-Architecture - MVVM
-Image - SDWebImage
-Database - Firebase
-Autolayout - Only Code for UI
+1. Architecture - MVVM
+2. Image - SDWebImage
+3. Database - Firebase
+4. Autolayout - Only Code for UI
 
 etc...
 
