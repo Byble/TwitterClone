@@ -39,6 +39,8 @@ class UploadTweetController: UIViewController {
         return iv
     }()
     
+    private let cationTextView = CaptionTextView()
+    
     // MARK: - Lifecycle
     
     init(user: User) {
@@ -62,8 +64,18 @@ class UploadTweetController: UIViewController {
     }
     
     @objc func handleUploadTweet() {
-        
+        guard let caption = cationTextView.text else { return }
+        TweetService.shared.uploadTweet(caption: caption) { (error, ref) in
+            if let error = error {
+                print("DEBUG: Failed to upload tweet with error \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
+    
+    
+    
     // MARK: - API
     
     // MARK: - Helpers
@@ -72,10 +84,15 @@ class UploadTweetController: UIViewController {
         view.backgroundColor = .white
         configureNavigationBar()
         
-        view.addSubview(profileImageView)
-        profileImageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
-                                paddingTop: 16, paddingLeft: 16)
-        profileImageView.sd_setImage(with: user.profileImageUrl, completed: nil)
+        let stack = UIStackView(arrangedSubviews: [profileImageView, cationTextView])
+        stack.axis = .horizontal
+        stack.spacing = 12
+        
+        view.addSubview(stack)
+        stack.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
+                     right: view.rightAnchor,
+                     paddingTop: 16, paddingLeft: 16, paddingRight: 16)
+        profileImageView.sd_setImage(with: user.profileImageUrl, completed: nil)                
     }
     
     func configureNavigationBar() {
